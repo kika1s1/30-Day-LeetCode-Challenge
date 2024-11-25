@@ -23,13 +23,18 @@ jobs:
       run: |
         python -m pip install --upgrade pip
 
+    - name: Debug Directory Structure
+      run: ls -R
+
     - name: Run Update Leaderboard Script
       run: python scripts/update_leaderboard.py
 
     - name: Commit and Push Leaderboard
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add LEADERBOARD.md progress.json
-        git commit -m "Update leaderboard [auto]"
+        git commit -m "Update leaderboard [auto]" || echo "No changes to commit"
         git push
