@@ -2,11 +2,27 @@
     "participants": {
         "abdi": {
             "completed_days": 1,
-            "last_updated": "2024-11-26 12:36 AM"
+            "last_updated": "2024-11-25 09:52 PM"
         },
         "tamirat": {
             "completed_days": 1,
-            "last_updated": "2024-11-26 12:36 AM"
+            "last_updated": "2024-11-25 09:52 PM"
+        },
+        "segni": {
+            "completed_days": 1,
+            "last_updated": "2024-11-25 09:52 PM"
+        },
+        "kiya": {
+            "completed_days": 1,
+            "last_updated": "2024-11-25 09:52 PM"
+        },
+        "kika1s1": {
+            "completed_days": 2,
+            "last_updated": "2024-11-25 09:52 PM"
+        },
+        "sena": {
+            "completed_days": 1,
+            "last_updated": "2024-11-25 09:52 PM"
         }
     }
 }
