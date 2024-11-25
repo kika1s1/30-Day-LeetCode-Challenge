@@ -1,0 +1,36 @@
+name: Update Leaderboard
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'solutions/**'
+
+jobs:
+  update-leaderboard:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run Update Leaderboard Script
+      run: python scripts/update_leaderboard.py
+
+    - name: Commit and Push Leaderboard
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add LEADERBOARD.md progress.json
+        git commit -m "Update leaderboard [auto]"
+        git push
