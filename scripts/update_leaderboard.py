@@ -4,9 +4,9 @@ import json
 from datetime import datetime
 
 # Paths
-SOLUTIONS_DIR = "../solutions"
-PROGRESS_FILE = "../progress.json"
-LEADERBOARD_FILE = "../LEADERBOARD.md"
+SOLUTIONS_DIR = "solutions"
+PROGRESS_FILE = "progress.json"
+LEADERBOARD_FILE = "LEADERBOARD.md"
 
 # Load existing progress or initialize an empty structure
 if os.path.exists(PROGRESS_FILE):
