@@ -14,8 +14,8 @@ By the end of this challenge, you’ll have a solid set of solutions and a deep 
 
 ## 📅 Challenge Breakdown
 
-- **Start Date:** [Enter Start Date]
-- **End Date:** [Enter End Date]
+- **Start Date:** December 1
+- **End Date:** December 31
 - **Duration:** 30 Days
 
 ### Key Goals:
