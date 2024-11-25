@@ -1,4 +1,12 @@
 {
-    "participants": {}
-  }
-  
+    "participants": {
+        "abdi": {
+            "completed_days": 1,
+            "last_updated": "2024-11-26 12:36 AM"
+        },
+        "tamirat": {
+            "completed_days": 1,
+            "last_updated": "2024-11-26 12:36 AM"
+        }
+    }
+}
