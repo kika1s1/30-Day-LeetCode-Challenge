@@ -3,6 +3,8 @@
 Welcome to the **30-Day LeetCode Challenge**! 🎉
 
 This challenge is designed to help you **sharpen your problem-solving skills**, build consistency in coding, and prepare for coding interviews. Whether you're a beginner or an experienced developer, this challenge is for you!
+## Challenges 
+**[Open 30 Day Challenge](CHALLENGE_TOPICS.md)**
 
 ## 🏆 How It Works
 
