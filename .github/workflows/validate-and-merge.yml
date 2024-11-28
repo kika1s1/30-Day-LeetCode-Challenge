@@ -1,0 +1,85 @@
+name: Validate Solutions, Update Leaderboard, and Merge
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-and-update:
+    name: Validate Solutions and Update Leaderboard
+    runs-on: ubuntu-latest
+
+    steps:
+    # Checkout the PR code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Python environment
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+
+    # Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt || echo "No requirements file found"
+
+    # Run validation tests
+    - name: Run solution tests
+      run: |
+        for test_file in tests/day*_test.py; do
+          echo "Running $test_file"
+          python $test_file || exit 1
+        done
+
+    # Run the leaderboard update script
+    - name: Update Leaderboard
+      run: python scripts/update_leaderboard.py
+
+    # Commit and push updated leaderboard if there are changes
+    - name: Commit and Push Leaderboard
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add LEADERBOARD.md progress.json
+        git commit -m "Update leaderboard [auto]" || echo "No changes to commit"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  auto-merge:
+    name: Auto Merge Pull Request
+    runs-on: ubuntu-latest
+    needs: validate-and-update
+
+    steps:
+    # Checkout the PR code
+    - name: Checkout PR
+      uses: actions/checkout@v3
+
+    # Merge the PR automatically
+    - name: Merge Pull Request
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { data: reviews } = await github.pulls.listReviews({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            pull_number: context.payload.pull_request.number,
+          });
+
+          const approved = reviews.some(review => review.state === "APPROVED");
+
+          if (approved) {
+            await github.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              merge_method: "squash",
+            });
+          } else {
+            core.setFailed("Pull request is not approved.");
+          }
