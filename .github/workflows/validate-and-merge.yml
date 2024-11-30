@@ -11,9 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Checkout the PR code
-    - name: Checkout code
+    # Checkout the PR branch
+    - name: Checkout PR branch
       uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
 
     # Set up Python environment
     - name: Set up Python
@@ -38,7 +40,7 @@ jobs:
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git add LEADERBOARD.md progress.json
         git commit -m "Update leaderboard [auto]" || echo "No changes to commit"
-        git push
+        git push origin ${{ github.head_ref }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
