@@ -4,9 +4,9 @@ import json
 from datetime import datetime
 
 # Paths
-SOLUTIONS_DIR = "solutions"
-PROGRESS_FILE = "progress.json"
-LEADERBOARD_FILE = "LEADERBOARD.md"
+SOLUTIONS_DIR = "../solutions"
+PROGRESS_FILE = "../progress.json"
+LEADERBOARD_FILE = "../LEADERBOARD.md"
 
 # Load existing progress or initialize an empty structure
 if os.path.exists(PROGRESS_FILE):
@@ -21,10 +21,11 @@ for username in os.listdir(SOLUTIONS_DIR):
     if os.path.isdir(user_dir):  # Ensure it's a folder
         # Find all unique 'dayXX.py' files
         day_files = {
-            re.match(r"day(\d{2})\.py", f).group(1)  # Extract day number (e.g., 01, 02)
+            match.group(1).zfill(2)  # Extract day number and ensure 2-digit format (e.g., '01')
             for f in os.listdir(user_dir)
-            if re.match(r"day\d{2}\.py", f)
+            if (match := re.match(r"day_?(\d+)\.py", f))  # Match "day01.py", "day_01.py", or "day011.py"
         }
+
         completed_days = len(day_files)  # Unique day count
 
         # Update progress
@@ -44,12 +45,12 @@ sorted_participants = sorted(
 )
 
 leaderboard = f"# Leaderboard 🏆\n\nUpdated on: {datetime.now().strftime('%Y-%m-%d %I:%M %p')}\n\n"
-leaderboard += "| Rank | Participant   | Completed Days | Last Updated         |\n"
-leaderboard += "|------|---------------|----------------|----------------------|\n"
+leaderboard += "| Rank | Participant       | Completed Days | Last Updated         |\n"
+leaderboard += "|------|-------------------|----------------|----------------------|\n"
 
 for rank, (username, details) in enumerate(sorted_participants, 1):
-    leaderboard += f"| {rank}    | @{username}    | {details['completed_days']}             | {details['last_updated']} |\n"
+    leaderboard += f"| {rank:<4} | @{username:<16} | {details['completed_days']:<14} | {details['last_updated']} |\n"
 
 # Write leaderboard to file
-with open(LEADERBOARD_FILE, "w") as f:
+with open(LEADERBOARD_FILE,  "w",encoding="utf-8") as f:
     f.write(leaderboard)
