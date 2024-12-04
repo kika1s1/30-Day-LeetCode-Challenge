@@ -26,7 +26,7 @@ This file contains the day-by-day breakdown of topics covered in the **30-Day Le
 **LeetCode Questions:**
 1. [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-3. [Palindrome Permutation](https://leetcode.com/problems/palindrome-permutation/)
+3. [Longest Plandromic Substring ](https://leetcode.com/problems/longest-palindromic-substring/)
 
 **Resources:**
 - 📖 **String Manipulation Basics:** [W3Schools](https://www.w3schools.com/python/python_strings.asp)
