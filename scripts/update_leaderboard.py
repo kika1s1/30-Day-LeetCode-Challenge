@@ -4,9 +4,9 @@ import json
 from datetime import datetime
 
 # Paths
-SOLUTIONS_DIR = "../solutions"
-PROGRESS_FILE = "../progress.json"
-LEADERBOARD_FILE = "../LEADERBOARD.md"
+SOLUTIONS_DIR = "solutions"
+PROGRESS_FILE = "progress.json"
+LEADERBOARD_FILE = "LEADERBOARD.md"
 
 # Load existing progress or initialize an empty structure
 if os.path.exists(PROGRESS_FILE):
@@ -38,19 +38,23 @@ for username in os.listdir(SOLUTIONS_DIR):
 with open(PROGRESS_FILE, "w") as f:
     json.dump(progress, f, indent=4)
 
-# Generate leaderboard
+# Badge Mapping
+BADGES = {1: "🏅 Gold", 2: "🥈 Silver", 3: "🥉 Bronze"}
+
+# Generate leaderboard with badges
 sorted_participants = sorted(
     progress["participants"].items(),
     key=lambda x: -x[1]["completed_days"]
 )
 
 leaderboard = f"# Leaderboard 🏆\n\nUpdated on: {datetime.now().strftime('%Y-%m-%d %I:%M %p')}\n\n"
-leaderboard += "| Rank | Participant       | Completed Days | Last Updated         |\n"
-leaderboard += "|------|-------------------|----------------|----------------------|\n"
+leaderboard += "| Rank | Participant       | Completed Days | Badge      | Last Updated         |\n"
+leaderboard += "|------|-------------------|----------------|------------|----------------------|\n"
 
 for rank, (username, details) in enumerate(sorted_participants, 1):
-    leaderboard += f"| {rank:<4} | @{username:<16} | {details['completed_days']:<14} | {details['last_updated']} |\n"
+    badge = BADGES.get(rank, "")  # Assign badge for top 3 or leave blank
+    leaderboard += f"| {rank:<4} | @{username:<16} | {details['completed_days']:<14} | {badge:<10} | {details['last_updated']} |\n"
 
 # Write leaderboard to file
-with open(LEADERBOARD_FILE,  "w",encoding="utf-8") as f:
+with open(LEADERBOARD_FILE, "w", encoding="utf-8") as f:
     f.write(leaderboard)

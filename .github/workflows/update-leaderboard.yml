@@ -6,10 +6,13 @@ on:
       - main
     paths:
       - 'solutions/**'
+  schedule:
+    - cron: '*/10 * * * *'  # Run every 10 minutes
 
 jobs:
   update-leaderboard:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout Code
       uses: actions/checkout@v2
