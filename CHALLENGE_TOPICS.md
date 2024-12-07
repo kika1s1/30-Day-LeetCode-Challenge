@@ -36,9 +36,8 @@ This file contains the day-by-day breakdown of topics covered in the **30-Day Le
 
 ## Day 7-9: Sliding Window
 **LeetCode Questions:**
-1. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
-2. [Longest Subarray with Ones After Deletion](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
-3. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+1. [Longest Subarray with Ones After Deletion](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
+2. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
 
 **Resources:**
 - 📖 **Sliding Window Technique:** [GeeksforGeeks](https://www.geeksforgeeks.org/window-sliding-technique/)
