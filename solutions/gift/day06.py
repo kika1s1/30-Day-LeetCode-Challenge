@@ -16,5 +16,4 @@ class Solution:
             even_palindrome = expand_around_center(i, i + 1)
 
             longest_palindrome = max(longest_palindrome, odd_palindrome, even_palindrome, key=len)
-        
         return longest_palindrome
