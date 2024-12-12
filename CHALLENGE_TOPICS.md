@@ -38,6 +38,7 @@ This file contains the day-by-day breakdown of topics covered in the **30-Day Le
 **LeetCode Questions:**
 1. [Longest Subarray with Ones After Deletion](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
 2. [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring/)
+3. [Count Number of Nice Subarrays](https://leetcode.com/problems/count-number-of-nice-subarrays/description/)
 
 **Resources:**
 - 📖 **Sliding Window Technique:** [GeeksforGeeks](https://www.geeksforgeeks.org/window-sliding-technique/)
