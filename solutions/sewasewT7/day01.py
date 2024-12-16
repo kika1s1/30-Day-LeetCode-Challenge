@@ -7,7 +7,3 @@ class Solution(object):
                 return ([seen[target-num],i])
             elif num not in seen:
                 seen[num] = i
-
-
-
-        
