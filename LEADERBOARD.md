@@ -5,7 +5,7 @@ Updated on: 2024-12-28 01:55 PM
 | Rank | Participant       | Completed Days | Badge      | Last Updated         |
 |------|-------------------|----------------|------------|----------------------|
 | 1    | @sidocoder        | 28             | 🏅 Gold     | 2024-12-28 01:55 PM |
-| 2    | @gift             | 26             | 🥈 Silver   | 2024-12-28 01:55 PM |
+| 2    | @gift             | 27             | 🥈 Silver   | 2024-12-28 01:55 PM |
 | 3    | @sewasewT7        | 14             | 🥉 Bronze   | 2024-12-28 01:55 PM |
 | 4    | @segnitsega       | 6              |            | 2024-12-28 01:55 PM |
 | 5    | @Abdi036          | 3              |            | 2024-12-28 01:55 PM |
