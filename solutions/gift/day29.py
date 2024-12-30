@@ -19,4 +19,3 @@ class Solution:
                     queue.append(neighbor)
         
         return count == numCourses
-    
