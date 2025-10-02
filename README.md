@@ -53,16 +53,19 @@ You can track your progress in the **[progress.json](progress.json)** file, whic
 2. Clone your forked repository to your local machine:
    ```bash
    git clone https://github.com/yourusername/30-Day-LeetCode-Challenge.git
+   ```
 
 3. Create a new directory for your solutions:
    ```bash
    mkdir solutions/yourusername
+   ```
 4. Start solving LeetCode problems and add your solutions in files named day01.py, day02.py, etc.
 5. After solving each day's problem, commit your changes:
    ```bash
    git add solutions/yourusername/dayXX.py
    git commit -m "Day XX: Problem title or brief description"
    git push origin main
+   ```
 
 6. Submit a Pull Request (PR) to merge your changes into the main repository.
 ## 🤝 Connect With Other Participants

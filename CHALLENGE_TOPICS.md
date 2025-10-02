@@ -26,7 +26,7 @@ This file contains the day-by-day breakdown of topics covered in the **30-Day Le
 **LeetCode Questions:**
 1. [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-3. [Longest Plandromic Substring ](https://leetcode.com/problems/longest-palindromic-substring/)
+3. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
 **Resources:**
 - 📖 **String Manipulation Basics:** [W3Schools](https://www.w3schools.com/python/python_strings.asp)
@@ -75,6 +75,9 @@ This file contains the day-by-day breakdown of topics covered in the **30-Day Le
 1. [Two Sum II - Input Array is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 2. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
 3. [Trapping Rain Water](https://leetcode.com/problems/trapping-rain-water/)
+
+---
+
 ## Day 19-21: Stacks & Queues
 **LeetCode Questions:**
 1. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
